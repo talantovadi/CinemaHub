@@ -1,1 +1,11 @@
-spring.application.name=cinemahub
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cinemahub
+    username: admin
+    password: verysecretpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
