@@ -1,7 +1,6 @@
 package kg.talantova.cinemahub.dto;
 
-import kg.talantova.cinemahub.entity.Actor;
-import kg.talantova.cinemahub.entity.Genre;
+import kg.talantova.cinemahub.enums.GenreType;
 import lombok.*;
 
 import java.util.Date;
@@ -12,14 +11,14 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class FilmCreateResponseDTO {
+public class FilmResponseDTO {
     private Long id;
     private String title;
     private String description;
     private Date releaseDate;
     private Double rating;
-    private List<Genre> genres;
-    private List<Actor> actors;
+    private List<GenreType> genres;
+    private List<ActorDTO> actors;
     private String director;
     private String language;
     private String country;

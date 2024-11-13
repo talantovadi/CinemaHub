@@ -1,6 +1,7 @@
 package kg.talantova.cinemahub.entity;
 
 import jakarta.persistence.*;
+import kg.talantova.cinemahub.enums.GenreType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,10 @@ public class Film {
     private String description;
     private Date releaseDate;
     private Double rating;
-    @ManyToMany
-    private List<Genre> genres;
+
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
+    private List<GenreType> genres;
     @ManyToMany
     private List<Actor> actors;
     private String director;
