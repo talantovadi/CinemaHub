@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/actors")
 @RequiredArgsConstructor
 public class ActorController {
     private final ActorService actorService;
@@ -51,10 +51,12 @@ public class ActorController {
         return new ResponseEntity<>(actorService.deleteActorById(id), HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ActorDTO> updateActor(@RequestBody @Valid ActorCreateDTO actorRequest) {
-        return new ResponseEntity<>(actorService.updateActor(actorRequest), HttpStatus.OK);
+    public ResponseEntity<ActorDTO> updateActor(@PathVariable("id") Long id,
+                                                @RequestBody @Valid ActorCreateDTO actorRequest
+    ) {
+        return new ResponseEntity<>(actorService.updateActor(actorRequest, id), HttpStatus.OK);
     }
 
 }

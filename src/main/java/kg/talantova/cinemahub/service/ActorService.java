@@ -12,6 +12,6 @@ public interface ActorService {
     List<ActorDTO> getActorsByName(String firstName, String lastName);
     List<ActorDTO> getActorsByFilm(Long filmId);
     Void deleteActorById(Long id);
-    ActorDTO updateActor(ActorCreateDTO actorRequest);
+    ActorDTO updateActor(ActorCreateDTO actorRequest, Long actorId);
 
 }

@@ -32,5 +32,5 @@ public class ActorCreateDTO {
     private String biography;
 
     @NotNull(message = "Films list is required")
-    private List<Long> films;
+    private List<Long> movies;
 }
