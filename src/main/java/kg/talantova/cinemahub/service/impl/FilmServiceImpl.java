@@ -35,31 +35,45 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public FilmResponseDTO updateFilm(FilmCreateRequestDTO requestDTO, Long filmId) {
-        return null;
+        repository.findById(filmId)
+                .orElseThrow(() -> new CinemaHubException("Фильма с таким id не существует!"));
+        List<Actor> actors = actorRepository.findAllById(requestDTO.getActors());
+        if(actors.isEmpty()) {
+            throw new CinemaHubException("Ни один актер из списков актеров не был найден! Ошибка редактирования фильма");
+        }
+        Film film = filmMapper.toEntity(requestDTO);
+        film.setActors(actors);
+        film.setId(filmId);
+        return filmMapper.toDto(repository.save(film));
     }
 
     @Override
     public Void deleteFilm(Long id) {
+        repository.deleteById(id);
         return null;
     }
 
     @Override
     public List<FilmResponseDTO> getFilms() {
-        return null;
+        return filmMapper.toListDTO(repository.findAll());
     }
 
     @Override
     public FilmResponseDTO getFilm(Long id) {
-        return null;
+       Film film =  repository.findById(id)
+                .orElseThrow(() -> new CinemaHubException("Фильма с таким id не существует!"));
+       return filmMapper.toDto(film);
     }
 
     @Override
     public List<FilmResponseDTO> getFilmByGenreType(GenreType type) {
-        return null;
+        return filmMapper.toListDTO(repository.findByGenres(type));
     }
 
     @Override
     public List<FilmResponseDTO> getFilmsByActor(Long actorId) {
-        return null;
+        Actor actor = actorRepository.findById(actorId)
+                .orElseThrow(() -> new CinemaHubException("Актера с таким id не существует!"));
+        return filmMapper.toListDTO(repository.findByActors(actor));
     }
 }
