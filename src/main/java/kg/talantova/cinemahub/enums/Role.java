@@ -1,6 +1,6 @@
 package kg.talantova.cinemahub.enums;
 
 public enum Role {
-    ADMIN,
-    USER
+    ROLE_ADMIN,
+    ROLE_USER
 }

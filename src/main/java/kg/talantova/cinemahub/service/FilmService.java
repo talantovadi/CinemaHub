@@ -1,8 +1,7 @@
 package kg.talantova.cinemahub.service;
 
-import kg.talantova.cinemahub.dto.FilmCreateRequestDTO;
-import kg.talantova.cinemahub.dto.FilmResponseDTO;
-import kg.talantova.cinemahub.entity.Actor;
+import kg.talantova.cinemahub.dto.film.FilmCreateRequestDTO;
+import kg.talantova.cinemahub.dto.film.FilmResponseDTO;
 import kg.talantova.cinemahub.enums.GenreType;
 import kg.talantova.cinemahub.exception.CinemaHubException;
 

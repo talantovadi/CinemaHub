@@ -9,3 +9,8 @@ spring:
       ddl-auto: update
     show-sql: true
 
+
+app:
+  jwtSecret: EhOW5DsaD9/Zw/0k68ulRgTGNEOjToLE8jcfQtDGUK8YvfQpsIXma9uP16mW0Rjh
+  jwtExpirationInMs: 36000000
+

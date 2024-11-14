@@ -1,7 +1,7 @@
 package kg.talantova.cinemahub.mapper;
 
-import kg.talantova.cinemahub.dto.UserCreateDTO;
-import kg.talantova.cinemahub.dto.UserDTO;
+import kg.talantova.cinemahub.dto.user.UserCreateDTO;
+import kg.talantova.cinemahub.dto.user.UserDTO;
 import kg.talantova.cinemahub.entity.User;
 import org.mapstruct.Mapper;
 

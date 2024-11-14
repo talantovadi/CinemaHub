@@ -1,9 +1,9 @@
 package kg.talantova.cinemahub.controller;
 
 import jakarta.validation.Valid;
-import kg.talantova.cinemahub.dto.ChangePasswordDTO;
-import kg.talantova.cinemahub.dto.UserCreateDTO;
-import kg.talantova.cinemahub.dto.UserDTO;
+import kg.talantova.cinemahub.dto.user.ChangePasswordDTO;
+import kg.talantova.cinemahub.dto.user.UserCreateDTO;
+import kg.talantova.cinemahub.dto.user.UserDTO;
 import kg.talantova.cinemahub.entity.User;
 import kg.talantova.cinemahub.service.UserService;
 import lombok.RequiredArgsConstructor;

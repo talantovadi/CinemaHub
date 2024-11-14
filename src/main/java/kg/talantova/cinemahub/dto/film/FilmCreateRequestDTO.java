@@ -1,4 +1,4 @@
-package kg.talantova.cinemahub.dto;
+package kg.talantova.cinemahub.dto.film;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;

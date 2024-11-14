@@ -1,5 +1,6 @@
-package kg.talantova.cinemahub.dto;
+package kg.talantova.cinemahub.dto.film;
 
+import kg.talantova.cinemahub.dto.actor.ActorDTO;
 import kg.talantova.cinemahub.enums.GenreType;
 import lombok.*;
 

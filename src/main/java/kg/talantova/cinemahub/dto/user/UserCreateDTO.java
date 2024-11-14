@@ -1,4 +1,4 @@
-package kg.talantova.cinemahub.dto;
+package kg.talantova.cinemahub.dto.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

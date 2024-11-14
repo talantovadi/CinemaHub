@@ -1,9 +1,9 @@
 package kg.talantova.cinemahub.service.impl;
 
 import jakarta.transaction.Transactional;
-import kg.talantova.cinemahub.dto.ChangePasswordDTO;
-import kg.talantova.cinemahub.dto.UserCreateDTO;
-import kg.talantova.cinemahub.dto.UserDTO;
+import kg.talantova.cinemahub.dto.user.ChangePasswordDTO;
+import kg.talantova.cinemahub.dto.user.UserCreateDTO;
+import kg.talantova.cinemahub.dto.user.UserDTO;
 import kg.talantova.cinemahub.entity.User;
 import kg.talantova.cinemahub.exception.CinemaHubException;
 import kg.talantova.cinemahub.mapper.UserMapper;
