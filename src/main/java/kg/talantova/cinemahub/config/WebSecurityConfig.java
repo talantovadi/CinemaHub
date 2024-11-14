@@ -33,7 +33,7 @@ public class WebSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return email -> userRepository.findByEmail(email)
+        return nickname -> userRepository.findByNickname(nickname)
                 .orElseThrow(() -> new CinemaHubException("User not found"));
     }
 
