@@ -27,6 +27,7 @@ public class FilmController {
     }
 
     @PutMapping("/{filmId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<FilmResponseDTO> updateFilm(@PathVariable("filmId") Long id, @RequestBody @Valid FilmCreateRequestDTO request) {
         return new ResponseEntity<>(filmService.updateFilm(request, id), HttpStatus.NO_CONTENT);
     }
@@ -42,6 +43,7 @@ public class FilmController {
     }
 
     @DeleteMapping("/{filmId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteFilm(@PathVariable("filmId") Long id) {
         return new ResponseEntity<>(filmService.deleteFilm(id),  HttpStatus.NO_CONTENT);
     }
