@@ -9,6 +9,7 @@ import kg.talantova.cinemahub.service.FilmService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class FilmController {
     private final FilmService filmService;
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<FilmResponseDTO> createFilm(@RequestBody @Valid FilmCreateRequestDTO request) throws CinemaHubException {
        return new ResponseEntity<>(filmService.createFilm(request), HttpStatus.CREATED);
     }
