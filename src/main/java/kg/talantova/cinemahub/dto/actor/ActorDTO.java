@@ -1,5 +1,6 @@
 package kg.talantova.cinemahub.dto.actor;
 
+import kg.talantova.cinemahub.dto.film.FilmResponseDTO;
 import lombok.*;
 
 import java.util.Date;
@@ -16,5 +17,5 @@ public class ActorDTO {
     private String lastName;
     private Date birthDate;
     private String biography;
-    private List<Long> movies;
+    private List<FilmResponseDTO> movies;
 }

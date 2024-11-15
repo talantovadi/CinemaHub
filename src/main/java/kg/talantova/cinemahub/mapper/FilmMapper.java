@@ -12,6 +12,7 @@ import java.util.List;
 public interface FilmMapper {
     @Mapping(target = "actors", ignore = true)
     Film toEntity(FilmCreateRequestDTO requestDTO);
+
     FilmResponseDTO toDto(Film film);
 
     List<FilmResponseDTO> toListDTO(List<Film> films);

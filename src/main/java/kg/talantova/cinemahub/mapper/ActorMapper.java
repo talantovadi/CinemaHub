@@ -10,6 +10,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ActorMapper {
+    @Mapping(target = "movies", ignore = true)
     ActorDTO toDto(Actor actor);
 
     @Mapping(target = "movies", ignore = true)
